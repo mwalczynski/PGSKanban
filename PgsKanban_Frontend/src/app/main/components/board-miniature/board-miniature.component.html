@@ -1,0 +1,56 @@
+<div *ngIf="userBoard"
+     class="boardMiniature"
+     fxLayout="column"
+     [routerLink]="['/board', userBoard.board.obfuscatedId]"
+     routerLinkActive="boardMiniature__active"
+     (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()"
+     [ngClass]="{'hovering': hovering, 'boardMiniature__welcomePage': isNotSidebar}"
+     click-stop-propagation>
+    <div fxLayout="row" fxLayoutAlign="space-between center" class="card-name">
+        <div class="opensans-bold__14-board-name text__overflow" matTooltipClass="tooltipStyle"
+             matTooltip="{{userBoard.board.name}}"
+             matTooltipPosition="above"
+             matTooltipShowDelay="{{tooltipDelay}}" matTooltipDisabled="{{showBoardNameTooltip}}">
+                {{userBoard.board.name}}
+        </div>
+        <div *ngIf="showHeart()">
+            <div [ngClass]="{'icon-heart': !userBoard.isFavorite}" (click)="changeFavorites()" click-stop-propagation>
+                <img class="icon__filled" *ngIf="userBoard.isFavorite" [src]="'/assets/heart-solid.svg'">
+            </div>
+        </div>
+    </div>
+
+    <div class="underlined__expanded-menu"></div>
+
+    <div fxLayout="row" fxLayoutAlign="start start">
+        <img class="text__overflow gravatar__board-miniature gravatar" [src]="imageUrl">
+        <div class="board-owner">
+            <div class="opensans-light__12">
+                Board owner
+            </div>
+            <div class="opensans-semibold__16 owner-details">
+                <div class="tooltip text__overflow" matTooltipClass="tooltipStyle"
+                      matTooltip="{{userBoard.board.owner.firstName}} {{userBoard.board.owner.lastName}}"
+                      matTooltipShowDelay="tooltipDelay" matTooltipPosition="below"
+                      matTooltipDisabled="{{showOwnerTooltip}}">
+                    {{userBoard.board.owner.firstName}} {{userBoard.board.owner.lastName}}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="underlined__expanded-menu_bottom"></div>
+
+    <div fxLayout="row" fxLayoutAlign="space-between center" class="card-members">
+        <div fxLayout="row" fxLayoutAlign="start center">
+            <div *ngIf="showMembersIfMany()" class="icon-people"></div>
+            <div *ngIf="showMembersIfMany()"
+                 class="opensans-bold__12-board-members board__miniature-board-members to-uppercase">
+                {{userBoard.board.membersCount - 1}} members
+            </div>
+        </div>
+        <div *ngIf="showBin()" (click)="deleteBoard()" click-stop-propagation>
+            <div class="icon-trash"></div>
+        </div>
+    </div>
+</div>

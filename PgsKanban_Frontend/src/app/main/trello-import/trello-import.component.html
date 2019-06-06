@@ -1,0 +1,81 @@
+<ngx-loading [show]="waitingForResponse" [config]="getSpinnerConfig()"></ngx-loading>
+<div class="container import__dialog">
+    <div class="row middle-xs">
+        <div class="col-xs-11 opensans-bold__16">
+            Import your board from Trello
+        </div>
+        <div class="col-xs-1">
+            <div class="icon icon-close" (click)="close()"></div>
+        </div>
+        <div class="row">
+            <mat-horizontal-stepper #stepper [linear]="true" class="import__stepper">
+                <mat-step [editable]="!finishedFlow" [stepControl]="firstFormGroup" class="import__stepper">
+                    <ng-template matStepLabel>Add file exported from Trello</ng-template>
+                    <form class="import__form" [formGroup]="firstFormGroup">
+                        <label for="uploader-input" ng2FileDrop
+                               [ngClass]="{'nv-file-over': hasBaseDropZoneOver}"
+                               (fileOver)="fileOverBase($event)"
+                               [uploader]="uploader" class="well my-drop-zone">
+                            <p class="opensans-bold__16">{{getPlaceholderText()}}</p>
+                        </label>
+                        <input type="file" ng2FileSelect [uploader]="uploader" id="uploader-input"
+                               class="import_hidden"/>
+                        <input type="checkbox" formControlName="firstCtrl" class="import_hidden">
+                    </form>
+                    <button class="step-button" [disabled]="!boardName" matStepperNext>Next</button>
+                </mat-step>
+                <mat-step [editable]="!finishedFlow" [stepControl]="secondFormGroup">
+                    <ng-template matStepLabel>Accept</ng-template>
+                    <form class="import__form" [formGroup]="secondFormGroup">
+                        <div class="import__inputs">
+                            <div class="opensans-bold__16">Here you can edit name of the board</div>
+                            <input type="checkbox" formControlName="firstCtrl" class="import_hidden">
+                            <input
+                                #boardNameInput
+                                spellcheck="false"
+                                autocomplete="off"
+                                formControlName="boardName"
+                                maxlength="100" name="name"
+                                required
+                                class="import__input opensans-bold__30 opensans-inputs"
+                                type="text">
+                            <div class="import__error"
+                                 [hidden]="boardNameInput.value"
+                                 role="alert">
+                                Board name is required
+                            </div>
+                        </div>
+                    </form>
+                    <div class="accept__buttons">
+                        <button class="step-button" matStepperPrevious>Back</button>
+                        <button class="step-button" (click)="importBoard(boardNameInput.value)"
+                                [disabled]="!boardNameInput?.value" matStepperNext>
+                            Import
+                        </button>
+                    </div>
+                </mat-step>
+                <mat-step>
+                    <ng-template matStepLabel>Done</ng-template>
+                    <div class="import__statistics">
+                        <div>Yay! You've successfully imported board</div>
+                        <div class="opensans-bold__16 import__statisticNumber">{{statistics?.userBoard.board.name}}
+                        </div>
+                        <div *ngIf="statistics?.listsCount > 0">
+                            <div>with <strong class="import__statisticNumber">{{statistics?.listsCount}} lists</strong>
+                                <span *ngIf="statistics?.cardsCount > 0">
+                                    <strong class="import__statisticNumber">, {{statistics?.cardsCount}} cards</strong>
+                                     <span *ngIf="statistics?.commentsCount > 0">and <strong class="import__statisticNumber">{{statistics?.commentsCount}} comments</strong></span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="import__placeholder--link">
+                        <div (click)="close()" [routerLink]="['board', statistics?.userBoard.board.obfuscatedId]"
+                             class="import__link">go to board
+                        </div>
+                    </div>
+                </mat-step>
+            </mat-horizontal-stepper>
+        </div>
+    </div>
+</div>

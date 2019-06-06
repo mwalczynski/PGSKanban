@@ -1,0 +1,68 @@
+@import "../shared/styles/fonts";
+@mixin modal__placeholder($color: $color-error) {
+    height: 63vh !important;
+    width: 48vw !important;
+    border: 2px solid $color;
+    border-radius: 8px;
+    max-width: 568px;
+    max-height: 498px;
+    margin: 0;
+    z-index: 2;
+}
+
+@mixin modal__message--big($color: $color-error) {
+    font-size: 30px;
+    height: 30%;
+    font-weight: bold;
+    color: $color;
+    padding-left: 15%;
+}
+
+@mixin modal__close($color: $color-error) {
+    height: 28px;
+    width: 28px;
+    font-size: 30px;
+    margin-right: 3%;
+    margin-top: 3%;
+    float: right;
+    color: $color;
+    &:hover {
+        color: white !important;
+        background-color: $color !important;
+        border-radius: 50%;
+    }
+}
+
+@mixin modal__button--big($color: $color-error) {
+    font-size: 26px;
+    font-weight: 700;
+    border: 2px solid $color;
+    border-radius: 6px;
+    padding: 1% 3% 1%;
+    height: 6vh !important;
+    color: $color;
+    background-color: white;
+    &:hover {
+        color: white !important;
+        background-color: $color !important;
+    }
+}
+
+.modal__message--small {
+    float: bottom;
+    height: 15%;
+    width: 75%;
+    font-size: 18px;
+    font-weight: 600;
+    padding-left: 15%;
+    margin-top: 16%;
+}
+
+.modal__button--padding{
+    padding-bottom: 8%;
+}
+
+.mat-dialog-container{
+    padding: 0!important;
+    border-radius: 8px !important;
+}

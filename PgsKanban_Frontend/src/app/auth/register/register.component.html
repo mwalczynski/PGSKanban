@@ -1,0 +1,93 @@
+<div class="k-page">
+    <div class="register__content">
+        <div class="register__inputs">
+            <div class="register__header opensans-bold__30">Register</div>
+            <form autocomplete="off" class="register__form" novalidate #f="ngForm" (ngSubmit)="onRegisterFormSubmit(f)">
+                <mat-form-field class="register__input">
+                    <mat-placeholder class="opensans-regular__14">Name</mat-placeholder>
+                    <input type="text" name="firstName" [(ngModel)]="data.firstName" #firstName="ngModel" matInput required maxlength="50" class="opensans-bold__14"
+                        F [ngClass]="{'inputField--redError': formInvalid(firstName)}">
+                    <mat-error class="error-message" *ngIf="firstName.hasError('required') && firstName.touched">
+                        This field is required
+                    </mat-error>
+                    <mat-error class="error-message" *ngIf="firstName.hasError('maxlength') && firstName.dirty">
+                        Your field is too long
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field class="register__input">
+                    <mat-placeholder class="opensans-regular__14">Surname</mat-placeholder>
+                    <input type="text" name="lastName" [(ngModel)]="data.lastName" #lastName="ngModel" matInput required maxlength="50" class="opensans-bold__14"
+                        [ngClass]="{'inputField--redError': formInvalid(lastName)}">
+                    <mat-error class="error-message" *ngIf="lastName.hasError('required') && lastName.touched">
+                        This field is required
+                    </mat-error>
+                    <mat-error class="error-message" *ngIf="lastName.hasError('maxlength') && lastName.dirty">
+                        Your field is too long
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field class="register__input">
+                    <mat-placeholder class="opensans-regular__14">Email</mat-placeholder>
+                    <input type="email" name="email" [(ngModel)]="data.email" #email="ngModel" matInput required pattern="^[_A-z0-9]+(\.[_A-z0-9]+)*@[A-z0-9-]+(\.[A-z0-9-]+)*(\.[A-z]{2,4})$"
+                        class="opensans-bold__14" [ngClass]="{'inputField--redError': emailInvalid(email)}">
+                    <mat-error class="error-message" *ngIf="email.hasError('required') && email.touched">
+                        This field is required
+                    </mat-error>
+                    <mat-error class="error-message" *ngIf="email.hasError('pattern') && email.dirty">
+                        Invalid email address
+                    </mat-error>
+                </mat-form-field>
+                <mat-error class="error-message register__other-errors" *ngIf="isEmailAlreadyUsed()">
+                    E-mail address already in use
+                </mat-error>
+                <mat-error class="error-message register__other-errors" *ngIf="isServerError">
+                    Server error occurred
+                </mat-error>
+                <mat-form-field class="register__input">
+                    <mat-placeholder class="opensans-regular__14">Password</mat-placeholder>
+                    <input type="password" name="password" [(ngModel)]="data.password" #password="ngModel" matInput required pattern="^((?=.*[A-Z])(?=.*\W).{6,255})$"
+                        class="opensans-bold__14" [ngClass]="{'inputField--redError': formInvalid(password)}">
+                    <mat-error class="error-message" *ngIf="password.hasError('required') && password.touched">
+                        This field is required
+                    </mat-error>
+                    <mat-error *ngIf="password.hasError('pattern') && password.dirty">
+                        <span class="error-message">Minimum 6 chars length</span>
+                        <br>
+                        <span class="error-message">including 1 upper and 1 special</span>
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field class="register__input">
+                    <mat-placeholder class="opensans-regular__14">Repeat password</mat-placeholder>
+                    <input type="password" name="confirmPassword" [(ngModel)]="data.confirmPassword" #confirmPassword="ngModel" matInput required
+                        class="opensans-bold__14" [ngClass]="{'inputField--redError': confirmPasswordInvalid(password, confirmPassword)}">
+                </mat-form-field>
+                <mat-error class="error-message register__password-error" *ngIf="confirmPasswordInvalid(password, confirmPassword)">
+                    Given passwords have to be the same
+                </mat-error>
+                <div class="recaptcha--smaller register__captcha">
+                    <re-captcha [(ngModel)]="data.reCaptchaToken" #reCaptchaToken="ngModel" name="reCaptchaToken" required></re-captcha>
+                    <mat-error class="error-message register__other-errors" *ngIf="isCaptchaInvalid">
+                        Invalid reCaptcha
+                    </mat-error>
+                </div>
+                <div class="register__terms">
+                    <mat-checkbox name="acceptedTerms" class="register__checkbox" [(ngModel)]="data.acceptedTerms">
+                        <p click-stop-propagation>I accept
+                            <a target="_self" class="register__download" download="PGS-kanban_terms&conditions.pdf" href="../../../assets/PGS-kanban_terms_v1.pdf">
+                                terms & conditions
+                            </a>
+                        </p>
+                    </mat-checkbox>
+                    <mat-error class="error-message register__terms-error" *ngIf="f.submitted && !data.acceptedTerms">
+                        You have to accept terms & conditions
+                    </mat-error>
+                </div>
+                <button class="register__button button_disabled--color" type="submit" [disabled]="!canRegister(f)">
+                    register new account
+                </button>
+            </form>
+            <p class="register__link">Have an account?
+                <a class="anchor--orange" routerLink='/login'>Login here</a>.
+            </p>
+        </div>
+    </div>
+</div>

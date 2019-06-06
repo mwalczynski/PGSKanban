@@ -1,0 +1,14 @@
+<div fxLayout="column" fxLayoutAlign="space-between center" class="deleteConfirmation__placeholder">
+    <div class="opensans-bold__14 confirmation__message">
+        <span>You will lose access to</span>
+        <br *ngIf="message.length > 30">
+        <span>{{ message }}.</span>
+        <br>
+        <span></span>Are you sure you want to
+        <span class="delete-accent">permanently delete</span> it?
+    </div>
+    <div class="confirmation__buttons" fxLayout="row" fxLayoutAlign="space-between center">
+        <button class="confirm__button" (click)="delete()">delete</button>
+        <div class="confirmation__cancel" (click)="cancel()">Cancel</div>
+    </div>
+</div>

@@ -1,0 +1,20 @@
+@import "../error-styles";
+
+.error403__main {
+    @include error__container(42.8%, 480px);
+    left: 21.9%;
+}
+
+.error403__big-error {
+    @extend .errorPage__error--big;
+    letter-spacing: -8px;
+    margin-right: 10px;
+    text-align: right;
+}
+
+.error403__message {
+    position: absolute;
+    right: 0px;
+    font-size: 14px;
+    font-weight: 600;
+}

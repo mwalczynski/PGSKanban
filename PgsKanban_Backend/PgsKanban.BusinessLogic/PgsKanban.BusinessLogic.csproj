@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="6.1.1" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="2.0.1" />
+    <PackageReference Include="Facebook" Version="7.0.6" />
+    <PackageReference Include="IdentityModel" Version="2.0.1" />
+    <PackageReference Include="Kent.Cryptography.Obfuscation" Version="2.0.0" />
+    <PackageReference Include="Sendgrid" Version="9.8.0" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="5.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\PgsKanban.DataAccess\PgsKanban.DataAccess.csproj" />
+    <ProjectReference Include="..\PgsKanban.Dto\PgsKanban.Dto.csproj" />
+  </ItemGroup>
+
+</Project>

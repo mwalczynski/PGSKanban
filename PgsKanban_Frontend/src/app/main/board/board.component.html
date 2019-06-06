@@ -1,0 +1,56 @@
+<div class="board__name-panel" (click)="onClickOutsideSidebar()">
+    <div class="row board__header">
+        <div class="col-xs-11 col-md-11 col-lg-11">
+            <div (click)="startEditing()" *ngIf="isTextDisplayed()"
+                 class="opensans-bold__30 board__name text__overflow">
+                <span matTooltip="{{board.name}}" matTooltipClass="tooltipStyle" matTooltipPosition="below"
+                      matTooltipShowDelay="{{tooltipDelay}}" matTooltipDisabled="{{showTooltip}}">{{board.name}}</span>
+            </div>
+            <form autocomplete="off" class="board__form opensans-bold__30" *ngIf="isFormDisplayed()" novalidate #form="ngForm"
+                  (submit)="saveBoard(form)">
+                <input (escKeyPressed)="abortEditing()"
+                       #name="ngModel" spellcheck="false"
+                       maxlength="100" [autofocus] name="name"
+                       required [(ngModel)]="board.name"
+                       (blur)="abortEditing()"
+                       class="board__input opensans-bold__30 opensans-inputs"
+                       type="text">
+                <div class="opensans-itallic__14" role="alert">
+                    <div *ngIf="isErrorDisplayed(form)">Board name is required</div>
+                </div>
+            </form>
+        </div>
+        <div class="col-xs-1 col-md-1 col-lg-1">
+            <div *ngIf="isOwner">
+                <button (mousedown)="saveList(); $event.preventDefault(); $event.stopPropagation();" class="add__list-button"
+                        [ngClass]="{'button__hover-disabled': isDragging(), 'button__hover': !isDragging()}"
+                        (mouseenter)="mouseOverButton()" (mouseleave)="mouseOutOfButton()">Add List
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-md-12 col-lg-12">
+            <div class="board__row" [dragula]='"lists-bag"'
+                 [dragulaModel]="lists"
+            >
+                <div *ngFor="let item of lists; let index = index;"
+                     class="board__list" [class.first-list]="index == 0"
+                >
+                    <app-list
+                        [list]="item"
+                        [id]="item.id"
+                        [isOwner]="isOwner"
+                        (listAdded)="addList()"
+                        (abortAddingList)="deleteLastList()"
+                        (addNewList)="addList()"
+                        (deleteChosenList)="deleteList($event)">
+                    </app-list>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="board__app-footer">
+    <app-footer></app-footer>
+    <div>

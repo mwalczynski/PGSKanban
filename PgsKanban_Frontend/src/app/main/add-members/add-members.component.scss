@@ -1,0 +1,68 @@
+@import "../../shared/styles/colors";
+
+.underlined {
+    width: 94%;
+    align-self: center;
+}
+
+.add-member__container{
+    border: 2px solid $color-secondaryBackground;
+    width: 370px;
+    overflow: hidden;
+}
+
+.add-member__container__header {
+    padding: 0px 12px;
+    height: 40px;
+    width: 100%;
+}
+
+.icon-close.icon-close-addMember {
+    font-size: 20px;
+    &:hover {
+        color: $color-accent;
+    }
+}
+
+.add-member__container__header__text {
+    text-transform: uppercase;
+    color: black !important;
+    &:hover {
+        cursor: default;
+    }
+}
+
+.add-member__container__search-box-wrapper {
+    padding: 0px 22px;
+    margin-bottom: 15px;
+    height: 45px;
+    color: $color-secondary;
+}
+
+.search-box-wrapper__input {
+    border: none;
+    width: 370px;
+    padding-left: 5%;
+}
+
+.search-box-wrapper__input,
+.search-box-wrapper__input::placeholder {
+    color: $color-secondary;
+    width: 300px;
+    margin-left: -10px;
+    border: none;
+}
+
+.icon-magnifier.icon-magnifier-addMember {
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.add-member__container__results-list-wrapper {
+    height: 265px;
+}
+
+.results-list-wrapper__text {
+    color: $color-secondary;
+    align-self: center;
+}

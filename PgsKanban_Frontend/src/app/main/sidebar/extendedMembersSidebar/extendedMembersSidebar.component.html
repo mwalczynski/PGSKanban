@@ -1,0 +1,13 @@
+<div class="sidebar__extended" [@slideInOutAnimation]  *ngIf="isMembersSidebarShown">
+    <div fxLayout="column">
+        <div class="sidebar-extended__header" fxLayout="row" fxLayoutAlign="space-between center">
+            <button (click)="showMemberAddingDialog()" class="sidebar-button opensans-bold__12"> Add board member </button>
+            <div (click)="foldMembersSidebar()" class="icon icon-close"></div>
+        </div>
+        <div class="sidebar__container">
+            <div *ngFor="let member of (memberList | async).members; let last = last" [ngClass]="{'lastMember': last}">
+                <app-member-miniature [isAllowedToModify]="isAllowedToModify" [member]="member"></app-member-miniature>
+            </div>
+        </div>
+    </div>
+</div>

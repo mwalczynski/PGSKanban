@@ -1,0 +1,14 @@
+@import "../../../shared/styles/_colors.scss";
+
+footer {
+    max-width: 100%;
+    text-align: center;
+    color: $color-secondary;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+footer .icon__filled {
+    width: 12px;
+    height: 12px;
+}

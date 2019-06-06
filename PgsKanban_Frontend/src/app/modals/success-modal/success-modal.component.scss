@@ -1,0 +1,26 @@
+@import "../../shared/styles/colors";
+@import "../modals";
+
+.success__placeholder {
+    @include modal__placeholder($color: $color-success);
+    display: flex;
+    flex-direction: column;
+}
+
+.icon-close.success__close {
+    @include modal__close($color: $color-success)
+}
+
+.success__message--big {
+    @include modal__message--big($color: $color-success)
+}
+
+.success__rocket {
+    font-size: 160px;
+    color: $color-success;
+}
+
+.success__button--big {
+    @include modal__button--big($color: $color-success)
+}
+

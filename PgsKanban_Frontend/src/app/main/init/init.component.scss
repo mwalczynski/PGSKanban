@@ -1,0 +1,53 @@
+@import "../../shared/styles/_fonts.scss";
+@import "../../shared/styles/_colors.scss";
+@import "../../shared/styles/_mixins.scss";
+.initialPages__container {
+    margin: 0;
+    padding-left: 13px;
+    padding-top: 64px;
+    overflow: auto;
+}
+
+.initialPages__greetingText {
+    height: 72px;
+    line-height: 120%;
+    letter-spacing: -1px;
+    word-spacing: 1px;
+    padding-bottom: 2px;
+    color: $color-black;
+}
+
+.initialPages__kanban {
+    color: $color-accent;
+    font-weight: 700;
+}
+
+.initialPages__button {
+    border-radius: 5px;
+    border: 0;
+    height: 30px;
+    margin-top: 10px;
+    background: $color-accent;
+    width: 170px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.initPage__description {
+    margin: 0px;
+    word-spacing: 0.1px;
+    letter-spacing: -1px;
+    color: $color-darkText;
+}
+
+.initialPages__textButton {
+    color: $color-secondaryBackground;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.import__button {
+    @include button($background: $color-grey, $float: left, $width: 170px);
+    margin-top: 10px;
+    margin-bottom: 20px;
+}

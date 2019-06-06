@@ -1,0 +1,54 @@
+<div *ngIf="userData && statisticsInfo" class="initialPages__container" fxLayout="column">
+    <p class="opensans-bold__30 initialPages__greetingText">Welcome back!
+        <br>{{userData.firstName}} {{userData.lastName}}</p>
+    <div class="opensans-light__24 initPage__description">Here are your last visited
+        <span class="initialPages__kanban"> Kanban</span> boards.</div>
+    <div class="welcomePage__Container">
+        <div class="welcomePage__button">
+            <button routerLink='/board' class="initialPages__button button--floatRight opensans-bold__12-welcomePage--button">
+                Create new board
+            </button>
+        </div>
+        <div class="welcomePage__lastBoards">
+            <div *ngFor="let board of statisticsInfo.latestUserBoards; let last = last" [ngClass]="{'lastBoard':last}" class="lastVisitedBoards">
+                <board-miniature [isNotSidebar]="true" [userBoard]="board"></board-miniature>
+            </div>
+        </div>
+        <div class="welcomePage__statistics">
+            <p class="opensans-light__24 initPage__description">Some numbers for you:</p>
+            <div class="welcomePage__circleStats">
+                <div class="welcomePage__circleCommon" [ngStyle]="{'border-width': setBorder(statisticsInfo.boards) +'px'}">
+                    <span class="text--center">
+                        <span class="number--style">{{statisticsInfo.boards}}</span>
+                        <br/>
+                        <span class="text--style">boards</span>
+                    </span>
+                </div>
+                <div class="welcomePage__circleCommon" [ngStyle]="{'border-width': setBorder(statisticsInfo.lists) +'px'}">
+                    <span class="text--center">
+                        <span class="number--style">{{statisticsInfo.lists}}</span>
+                        <br/>
+                        <span class="text--style">lists</span>
+                    </span>
+                </div>
+                <div class="welcomePage__circleCommon" [ngStyle]="{'border-width': setBorder(statisticsInfo.cards) +'px'}">
+                    <span class="text--center">
+                        <span class="number--style">{{statisticsInfo.cards}}</span>
+                        <br/>
+                        <span class="text--style">cards</span>
+                    </span>
+                </div>
+                <div class="welcomePage__circleCommon" [ngStyle]="{'border-width': setBorder(statisticsInfo.collaborators) +'px'}">
+                    <div class="text--center">
+                        <span class="number--style">{{statisticsInfo.collaborators}}</span>
+                        <br/>
+                        <span class="text--style">collaborators</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="welcome__app-footer">
+        <app-footer></app-footer>
+    </div>
+</div>

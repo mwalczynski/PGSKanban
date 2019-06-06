@@ -1,0 +1,36 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="TestFiles\boardWithListsAndCards.json" />
+    <None Remove="TestFiles\boardWithListsCardsAndComments.json" />
+    <None Remove="TestFiles\boardWithListsWithoutCards.json" />
+    <None Remove="TestFiles\emptyBoard.json" />
+    <None Remove="TestFiles\invalidFile.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="TestFiles\boardWithListsAndCards.json" />
+    <EmbeddedResource Include="TestFiles\boardWithListsCardsAndComments.json" />
+    <EmbeddedResource Include="TestFiles\boardWithListsWithoutCards.json" />
+    <EmbeddedResource Include="TestFiles\emptyBoard.json" />
+    <EmbeddedResource Include="TestFiles\invalidFile.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.6.0-preview-20180109-01" />
+    <PackageReference Include="Moq" Version="4.8.1" />
+    <PackageReference Include="NUnit" Version="3.9.0" />
+    <PackageReference Include="NUnit3TestAdapter" Version="3.9.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\PgsKanban.BusinessLogic\PgsKanban.BusinessLogic.csproj" />
+    <ProjectReference Include="..\PgsKanban.DataAccess\PgsKanban.DataAccess.csproj" />
+    <ProjectReference Include="..\PgsKanban.Import\PgsKanban.Import.csproj" />
+  </ItemGroup>
+
+</Project>

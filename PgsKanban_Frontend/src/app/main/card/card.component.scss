@@ -1,0 +1,44 @@
+@import '../../shared/styles/_colors.scss';
+@import '../../shared/styles/_fonts.scss';
+@import '../../shared/styles/_textarea.scss';
+.card__element {
+    width: 350px;
+    border-radius: 6px;
+    background-color: $color-secondaryBackground;
+    &:hover {
+        cursor: pointer;
+    }
+    display: flex;
+    flex-direction: column;
+}
+
+.card__content {
+    position: relative;
+    word-break: break-all;
+    display: flex;
+    flex-direction: row;
+}
+
+.card__label {
+    padding: 0 19px;
+    width: 100%;
+    user-select: none;
+}
+
+.card__trash {
+    position: absolute;
+    font-size: 15px !important;
+    bottom: 5px;
+    right: 5px;
+}
+
+.card__textarea {
+    padding: 0;
+    border: none;
+    width: 312px;
+    resize: none;
+}
+
+.card__form {
+    padding: 12px 19px 8px 19px;
+}

@@ -1,0 +1,6 @@
+<div>
+    <mat-slide-toggle [disabled]="waitingForResponse" [(ngModel)]="isProfileAnonymous"
+                      [checked]="isProfileAnonymous" (ngModelChange)="onAnonymityChange()">
+        <p class="opensans-bold__16"> Prevent adding me to boards </p>
+    </mat-slide-toggle>
+</div>

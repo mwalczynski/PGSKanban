@@ -1,0 +1,83 @@
+@import "../../../shared/styles/colors.scss";
+.card-name {
+    height: 60px;
+}
+
+.boardMiniature {
+    width: 250px;
+    border-radius: 5px;
+    background: $color-mainBackground;
+    cursor: pointer;
+}
+
+.boardMiniature__active {
+    background: $color-secondaryBackground;
+}
+
+.boardMiniature__welcomePage {
+    background: $color-secondaryBackground;
+}
+
+.card-name {
+    height: 50px;
+    margin: 0 20px;
+}
+
+.card-members {
+    height: 39px;
+    margin: 0 20px;
+}
+
+.opensans-bold__12-board-members {
+    color: $color-secondary;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.board-owner {
+    margin-left: 10px;
+}
+
+.gravatar__board-miniature {
+    border-radius: 50%;
+    margin-left: 20px;
+}
+
+.board__miniature-board-members {
+    border-radius: 8px;
+    text-align: center;
+    background-color: $color-mainBackground;
+    padding: 2px;
+    margin-right: auto;
+    border-left: 10px solid $color-mainBackground;
+    border-right: 10px solid $color-mainBackground;
+}
+
+.underlined__expanded-menu {
+    border-bottom: 1px solid $color-underlineBoardMiniature;
+    margin-right: 20px;
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+
+.underlined__expanded-menu_bottom {
+    border-bottom: 1px solid $color-underlineBoardMiniature;
+    margin-right: 20px;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+.opensans-bold__14-board-name {
+    color: $color-darkText;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.icon__filled {
+    width: 24px;
+    height: 24px;
+}
+
+.owner-details {
+    max-width: 170px;
+}

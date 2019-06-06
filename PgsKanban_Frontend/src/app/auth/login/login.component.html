@@ -1,0 +1,75 @@
+<div class="k-page">
+    <div class="login__content">
+        <div class="login__inputs">
+            <div class="login__header opensans-bold__30">Sign in</div>
+            <form autocomplete="off" class="login__form" (ngSubmit)="onLogin(f)" #f="ngForm">
+                <mat-form-field class="login__input">
+                    <mat-placeholder class="opensans-regular__14 login__label">Email</mat-placeholder>
+                    <input
+                    [(ngModel)]="loginData.email"
+                    #email="ngModel"
+                    matInput
+                    type="email"
+                    id="email"
+                    required
+                    name="email">
+                </mat-form-field>
+                <div>
+                    <mat-form-field class="login__input">
+                        <mat-placeholder class="opensans-regular__14 login__label">Password</mat-placeholder>
+                        <input
+                        [(ngModel)]="loginData.password"
+                        #password="ngModel"
+                        matInput
+                        type="password"
+                        id="password"
+                        name="password"
+                        required>
+                    </mat-form-field>
+                </div>
+                <div>
+                    <div *ngIf="isCaptchaDisplayed" class="recaptcha--smaller login__error">
+                        <re-captcha
+                        [(ngModel)]="loginData.recaptchaResponse"
+                        #recaptchaResponse
+                        name="captcha"
+                        required>
+                        </re-captcha>
+                    </div>
+                    <div class="centered_column">
+                        <mat-error class="error-message login__message" *ngIf="isError">{{errorMessage}}
+                        </mat-error>
+                        <div class="login__row">
+                            <div>
+                                <a class="login__forgot" routerLink='/forgot'>Forgot password?</a>
+                            </div>
+                            <button
+                            class="login__button button_disabled--color"
+                            type="submit"
+                            [disabled]="!f.valid || isButtonDisabled">
+                                sign in
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <p class="login__link">Don't have account?
+                <a class="anchor--orange" routerLink='/register'>Register here</a>.
+            </p>
+            <div *ngIf="isAnyExternalLoginProviderAvailable()" class="login__externals">
+                <div class="external_section--underlined"></div>
+                <button *ngIf="isOpenIdButtonDisplayed()" (click)="startOpenId()" class="login__external login__external--openId to-uppercase">use pgs open
+                    id
+                </button>
+                <button *ngIf="isFacebookButtonDisplayed()" (click)="startFacebook()"
+                        class="login__external login__external--facebook to-uppercase">
+                    Log in with facebook
+                </button>
+                <button *ngIf="isGoogleButtonDisplayed()" (click)="startGoogleAuthentication()"
+                        class="login__external login__external--google to-uppercase">
+                    log in with google
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

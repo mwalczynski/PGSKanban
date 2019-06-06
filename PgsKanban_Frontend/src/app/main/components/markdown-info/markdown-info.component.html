@@ -1,0 +1,70 @@
+<div *ngIf="isDisplayed" class="markdown-info">
+    <div class="row">
+        <div class="col-md-6"><strong>#</strong></div>
+        <div class="col-md-6 markdown__header1">header 1</div>
+    </div>
+    <div class="row">
+        <div class="col-md-6"><strong>##</strong></div>
+        <div class="col-md-6 markdown__header2">header 2</div>
+    </div>
+    <div class="row">
+        <div class="col-md-6"><strong>###</strong></div>
+        <div class="col-md-6 markdown__header3">header 3</div>
+    </div>
+    <div class="row">
+        <div class="col-md-6"><strong>**text**</strong></div>
+        <div class="col-md-6 markdown__bold">bold</div>
+    </div>
+    <div class="row">
+        <div class="col-md-6"><strong>*text*</strong></div>
+        <div class="col-md-6 markdown__italic">italic</div>
+    </div>
+    <div class="row">
+        <div class="col-md-6"><strong>~~text~~</strong></div>
+        <div class="col-md-6 markdown__strikethrough">strikethrough</div>
+    </div>
+    <h4 class="info-header">Lists</h4>
+    <div class="lists-info">
+        <div class="row">
+            <p class="paragraph">Ordered</p>
+        </div>
+        <div class="row list__row">
+            <div col-md-6>
+                <ol class="list-style">
+                    <li><strong>1. </strong>Item1</li>
+                    <li><strong>2. </strong>Item2</li>
+                    <li><strong>3. </strong>Item3</li>
+                </ol>
+            </div>
+            <div col-md-6>
+                <ol >
+                    <li>Item1</li>
+                    <li>Item2</li>
+                    <li>Item3</li>
+                </ol>
+            </div>
+        </div>
+        <div class="row">
+            <p class="paragraph">Unordered</p>
+        </div>
+        <div class="row list__row">
+            <div col-md-6>
+                <ul class="list-style">
+                    <li><strong>* </strong>Item1</li>
+                    <li><strong>* </strong>Item2</li>
+                    <li><strong>* </strong>Item3</li>
+                </ul>
+            </div>
+            <div col-md-6>
+                <ul >
+                    <li>Item1</li>
+                    <li>Item2</li>
+                    <li>Item3</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <a class="info-link anchor--orange" target="_blank" href="https://en.wikipedia.org/wiki/Markdown#Example">
+        Read More
+    </a>
+</div>

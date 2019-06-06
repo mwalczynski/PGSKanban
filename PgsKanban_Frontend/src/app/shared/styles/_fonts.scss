@@ -1,0 +1,120 @@
+@import "colors";
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800");
+.opensans-regular__10 {
+    color: $color-secondary;
+    font-size: 10px;
+    font-weight: normal;
+}
+
+.opensans-light__12 {
+    color: $color-secondary;
+    font-size: 12px;
+    font-weight: 300;
+}
+
+.opensans-regular__12 {
+    font-family: "Open Sans", sans-serif;
+    color: $color-secondary;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.opensans-semibold__12 {
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.opensans-bold__12 {
+    color: $color-secondary;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.opensans-regular__13 {
+    font-weight: 400;
+    font-size: 13px;
+}
+
+.opensans-semibold__13 {
+    font-weight: 600;
+    font-size: 13px;
+}
+
+.opensans-light__14 {
+    color: $color-darkText;
+    font-weight: 300;
+    font-size: 14px;
+}
+
+.opensans-regular__14 {
+    color: $color-darkText;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.opensans-semibold__14 {
+    color: $color-darkText;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.opensans-bold__14 {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.opensans-semibold__15 {
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.opensans-light__16 {
+    margin: 16px;
+    color: $color-secondary;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.opensans-semibold__16 {
+    color: $color-darkText;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.opensans-bold__16 {
+    color: $color-darkText;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.opensans-regular__16 {
+    font-size: 16px;
+    font-weight: normal;
+}
+
+.opensans-light__24 {
+    font-size: 24px;
+    font-weight: 300;
+}
+
+.opensans-bold__30 {
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.text__overflow {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.opensans-itallic__14 {
+    font-style: italic;
+    color: $color-error;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.opensans-inputs {
+    font-family: "Open Sans", sans-serif;
+}

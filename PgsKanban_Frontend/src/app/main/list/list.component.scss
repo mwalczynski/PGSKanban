@@ -1,0 +1,156 @@
+@import "../../shared/styles/mixins";
+@import "~dragula/dist/dragula.css";
+@import "../../../styles.scss";
+.list__cardContainer {
+    margin-bottom: 5px;
+    width: 350px;
+}
+
+.card__container {
+    min-height: 20px;
+    max-height: calc(100vh - 367px);
+}
+
+.list__container {
+    position: relative;
+    width: 370px;
+    overflow: auto;
+    max-height: calc(100vh - 367px);
+}
+
+.list-size {
+    position: static;
+    display: flex;
+    flex-direction: column;
+    background: transparent;
+    width: 370px;
+}
+
+.list-size .listName--color {
+    color: black;
+}
+
+.list__header.hovering .list__name {
+    max-width: 350px;
+    text-overflow: ellipsis;
+    cursor: pointer;
+}
+
+.list__header.hovering .listName--color {
+    color: $color-secondary;
+    max-width: 320px !important;
+}
+
+.list__header.hovering .list__dots {
+    display: inline;
+}
+
+.list__scrollbar{
+    position: relative;
+}
+
+.list__error {
+    color: $color-error;
+    font-size: 12px;
+    font-style: italic;
+    float: right;
+    cursor: text;
+}
+
+.list__name {
+    height: 30px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.list__add-card {
+    @include buttonCustomHover($width: 350px, $background: $color-mainBackground);
+    float: left;
+    margin-top:5px;
+}
+
+.card {
+    margin-bottom: 5px;
+}
+
+.card__element.lastCard {
+    margin-bottom: 0px !important;
+}
+
+.list__input {
+    width: 350px;
+    border: none;
+    background-color: $color-mainBackground;
+    color: $color-secondary;
+    padding: 0px;
+}
+
+.icon-options {
+    color: $color-secondary;
+}
+
+.listName__label {
+    margin-top: 2px;
+}
+
+.list__dots {
+    font-size: 20px;
+    padding-top: 3px;
+    height: 30px;
+    display: none;
+    color: $color-secondary;
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.list__header {
+    display: flex;
+    width: 350px;
+    min-height: 30px;
+}
+
+.list__button-addCard {
+    @extend .to-uppercase;
+    border: 2px solid $color-secondary;
+    border-radius: 4px;
+    padding: 6px;
+    background: $color-mainBackground;
+    color: $color-secondary;
+    text-align: center;
+    font-weight: 700;
+    font-size: 12px;
+    float: left;
+    width: 350px;
+    height: 30px;
+    line-height: 0;
+}
+
+.list__button-addCard-hover {
+    color: $color-accent !important;
+    border-color: $color-accent !important;
+}
+
+.gu-mirror ::ng-deep .card__element {
+    background-color: $color-grey;
+}
+
+.gu-mirror ::ng-deep .card__element .icon-trash {
+    display: none;
+}
+
+.gu-mirror {
+    opacity: 1;
+}
+
+.gu-transit ::ng-deep .card__element {
+    opacity: 0;
+}
+
+.list__container .gu-transit {
+    opacity: 1;
+    width: 346px;
+    background: $color-mainBackground;
+    border: 2px solid $color-secondaryBackground;
+    border-radius: 6px;
+}

@@ -1,0 +1,63 @@
+@import "../../../shared/styles/colors";
+
+.memberToAdd {
+    height: 40px;
+    width: 340px;
+    margin-top: 4px;
+    margin-bottom: 2px;
+    border-radius: 4px;
+    background: inherit;
+    margin-left: 5px;
+    &:hover {
+        background: $color-mainBackground;
+    }
+}
+
+.memberToAdd__avatar-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 70px;
+    height: 100%;
+}
+.memberToAdd__avatar{
+    border-radius: 100%;
+    margin-right: 5px;
+}
+
+.memberToAdd__userInfo {
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    padding-left: 10px;
+    &:hover {
+        cursor: default;
+    }
+}
+
+.useInfo__nameSurname {
+    display:block !important;
+    width: 250px;
+    float: left;
+    height: 50%;
+    &:hover {
+        cursor: default;
+    }
+}
+
+.userInfo__email {
+    max-width: 100%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    &:hover {
+        cursor: default;
+    }
+}
+
+.userInfo__icons {
+    display: flex;
+    width: 15%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}

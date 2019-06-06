@@ -1,0 +1,49 @@
+@import "../../shared/styles/_colors.scss";
+@import "../../shared/styles/_fonts.scss";
+@import "../../shared/styles/_icons.scss";
+.sidebar {
+    position: relative;
+    background: white;
+    height: 100vh;
+    width: 100px;
+    z-index: 1;
+}
+
+.image {
+    width: 32px;
+    height: 36px;
+    justify-content: center;
+    align-items: center;
+    background-image: url("../../shared/img/k-icon.png");
+    cursor: pointer;
+}
+
+.sidebar-element {
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sidebar-underlined {
+    border-bottom: 1px solid $color-mainBackground;
+}
+
+.sidebar__icon {
+    margin: 4px;
+}
+
+.sidebar__button-active {
+    color: $color-accent !important;
+}
+
+div.icon.icon-user-follow:not(.disabled):hover {
+    cursor: pointer;
+}
+
+div.icon.icon-user-follow.disabled,
+div.opensans-bold__12.to-uppercase.disabled,
+div.icon.icon-user-follow.disabled:hover,
+div.opensans-bold__12.to-uppercase.disabled:hover {
+    color: $color-grey !important;
+}

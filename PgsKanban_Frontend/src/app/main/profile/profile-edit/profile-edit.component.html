@@ -1,0 +1,47 @@
+<div class="userProfile__Panel">
+    <div class="userProfile__changeName">
+        <div class="changeName__header opensans-bold__30 text__overflow">My profile</div>
+        <div class="changeName__form">
+            <form autocomplete="off" fxLayout="column" fxLayoutAlign="space around" #userProfileForm="ngForm" name="userProfileForm"
+                  (submit)="onEditFormSubmit(userProfileForm)">
+                <mat-form-field class="userProfileInput">
+                    <input matInput required name="firstname" maxlength="50" [value]="profile.firstName"
+                        [(ngModel)]="profile.firstName" spellcheck="false"
+                        type="text" #firstName="ngModel" class="opensans-bold__14" [disabled]="!isModificationAvailable()">
+                    <mat-placeholder required for="firstname" class="opensans-regular__14 input-placeholder">
+                        Name
+                    </mat-placeholder>
+                    <mat-error class="error-message" role="alert"
+                        *ngIf="firstName.hasError('required') && firstName.touched">This field is required
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field class="userProfileInput">
+                    <input matInput required name="lastname" maxlength="50" [value]="profile.lastName"
+                        [(ngModel)]="profile.lastName" spellcheck="false"
+                        [disabled]="!isModificationAvailable()" type="text" #lastName="ngModel" class="opensans-bold__14">
+                    <mat-placeholder class="opensans-regular__14 input-placeholder" required for="lastname">
+                        Surname
+                    </mat-placeholder>
+                    <mat-error ng-message="required" class="error-message" role="alert"
+                        *ngIf="lastName.hasError('required') && lastName.touched">
+                        This field is required
+                    </mat-error>
+                </mat-form-field>
+
+                <mat-form-field class="userProfileInput">
+                    <span class="flex" matTooltip="{{profile.email}}" matTooltipPosition="right">
+                        <input matInput disabled required name="email" class="opensans-bold__14" [value]="profile.email">
+                    </span>
+                    <mat-placeholder class="opensans-regular__14 input-placeholder" required for="email">
+                        E-mail
+                    </mat-placeholder>
+                </mat-form-field>
+                <button *ngIf="isModificationAvailable()" type="submit" class="userProfile__button" [disabled]="shouldDisable(userProfileForm)">
+                    Save
+                </button>
+            </form>
+        </div>
+
+    </div>
+
+</div>

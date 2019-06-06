@@ -1,0 +1,65 @@
+@import "board";
+@import "../../shared/styles/mixins";
+@import "../../shared/styles/fonts";
+
+.gu-mirror {
+    opacity: 1;
+    pointer-events: none;
+    background-color: $color-mainBackground;
+}
+
+.gu-transit {
+    background-color: $color-secondary;
+    pointer-events: none;
+    border-radius: 8px;
+}
+
+.gu-transit ::ng-deep * {
+    opacity: 0;
+}
+
+.board__name {
+    width: 100%;
+    color: $color-black;
+}
+
+.board__form {
+    width: 100%;
+}
+
+.add__list-button {
+    @include buttonCustomHover($background: $color-mainBackground, $width: 80px);
+}
+
+.board__row {
+    min-width: 100px;
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+    flex-direction: row;
+    height: calc(100vh - 265px);
+    width: 100%;
+}
+
+.board__list {
+    margin-right: 15px;
+    margin-left: 15px;
+    padding-left: 15px;
+    max-height: calc(100vh - 250px);
+    border-radius: 8px;
+}
+
+.board__input {
+    font-weight: inherit;
+    font-family: inherit;
+    width: 100%;
+    border: none;
+    padding: 0 !important;
+    background-color: $color-mainBackground;
+    color: $color-secondary;
+}
+
+.first-list {
+    margin-left: 0;
+    padding-left: 0;
+}

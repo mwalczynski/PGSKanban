@@ -1,0 +1,26 @@
+<div class="add-member__container" fxLayout="column" fxFlexAlign="center start">
+    <div class="add-member__container__header" fxLayout="row" fxLayoutAlign="space-between center">
+        <div class="opensans-bold__14 add-member__container__header__text">add member to board</div>
+        <div class="icon-close icon-close-addMember" (click)="closeDialog()"></div>
+    </div>
+    <div class="underlined"></div>
+    <div class="add-member__container__search-box-wrapper" fxLayout="row" fxLayoutAlign="start center">
+        <div class="icon-magnifier icon-magnifier-addMember"></div>
+        <input #searchPhrase autocomplete="off" class="search-box-wrapper__input opensans-regular__12" [autofocus] id="search__input"
+               placeholder="Enter name or e-mail address to find a user"
+               maxlength="100" [(ngModel)]="currentSearchPhrase">
+    </div>
+    <div>
+        <div class="add-member__container__results-list-wrapper" fxLayout="column">
+            <div class="opensans-regular__16 results-list-wrapper__text" [hidden]="!showNoResultMessage()">No
+                results to show. Try again.
+            </div>
+            <div class="opensans-regular__16 results-list-wrapper__text"
+                 [hidden]="!showNoEnoughCharactersMessage()">At least 3 characters required
+            </div>
+            <div *ngFor="let member of members">
+                <app-member-to-add [member]="member" (handle-error)="closeDialog()"></app-member-to-add>
+            </div>
+        </div>
+    </div>
+</div>

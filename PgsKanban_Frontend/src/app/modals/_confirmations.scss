@@ -1,0 +1,39 @@
+@import "../shared/styles/_fonts.scss";
+@import "../shared/styles/_mixins.scss";
+@import "../shared/styles/_colors.scss";
+.text__button {
+    color: $color-secondary;
+    text-decoration: underline;
+    text-decoration-color: $color-lightGrey;
+    cursor: pointer;
+    &:hover {
+        color: $color-accent;
+        text-decoration-color: $color-accent;
+    }
+}
+
+.confirmation__buttons {
+    padding-top: 30px;
+    width: 170px;
+}
+
+.confirm__button {
+    @include button($color: $color-error);
+}
+
+.confirmation__cancel {
+    @extend .text__button;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 600;
+    font-size: 13px;
+}
+
+.delete-accent {
+    text-transform: uppercase;
+    color: $color-error;
+    font-weight: bold;
+}
+
+.confirmation__message {
+    text-align: center;
+}

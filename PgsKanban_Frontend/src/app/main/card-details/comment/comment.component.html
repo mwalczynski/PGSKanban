@@ -1,0 +1,13 @@
+<div class="comment">
+    <div class="comment-owner" fxLayout="row" fxLayoutAlign="end start" *ngIf="comment.isOwner">
+        <div class="comment__content-owner">{{ comment.content }}</div>
+    </div>
+
+    <div class="comment-otherUser" fxLayout="row" fxLayoutAlign="start start" *ngIf="!comment.isOwner">
+        <img class="comment__gravatar" [src]="gravatarUrl"/>
+        <div fxLayout="column" fxLayoutAlign="start start">
+            <div class="comment__userData">{{ comment.user.firstName }} {{ comment.user.lastName }}</div>
+            <div Markdown [data]="comment.content" class="comment__content-otherUser"></div>
+        </div>
+    </div>
+</div>

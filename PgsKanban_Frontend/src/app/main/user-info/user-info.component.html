@@ -1,0 +1,26 @@
+<div class="user-info__bar" fxLayoutAlign="end" (mouseleave)="hideDropdown()">
+
+    <div fxFlex="0 1 auto" class="bar__profile" (click)="toggleDropdown()"
+         [ngClass]="{'profileOnActiveDropdown': activeDropdown, 'profileOnInactiveDropdown': !activeDropdown}">
+
+        <div fxLayout fxLayoutAlign="start center" fxLayoutGap="10px" class="profile__user-info-widget">
+            <div class="user-info-widget__gravatar">
+                <img class="gravatar" [src]="imageSrc">
+            </div>
+            <div class="user-info-widget__name opensans-semibold__16 text__overflow">{{profile.firstName}}
+                {{profile.lastName}}
+            </div>
+            <div class="icon-arrow-down user-info-widget__dropdown-icon"
+                 [ngClass]="{'icon-arrow-up': activeDropdown}"></div>
+        </div>
+
+        <div class="profile__dropdown-content" [ngClass]="{'showDropdownContent': activeDropdown}">
+            <div class="dropdown-content__element" (click)="goToProfile()">
+                <div class="icon-user element__icon"></div>
+                <span class="element__text opensans-semibold__13">My profile</span>
+            </div>
+        </div>
+
+    </div>
+
+</div>

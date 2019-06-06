@@ -1,0 +1,80 @@
+@import "colors";
+@import "fonts";
+.inputField--redError {
+    color: $color-error !important;
+}
+
+.mat-placeholder-required {
+    display: none;
+}
+
+.mat-form-field-ripple {
+    background-color: $color-error!important;
+}
+
+.mat-input-underline {
+    background-color: $color-lightGrey !important;
+}
+
+mat-form-field.ng-valid {
+    .mat-input-underline {
+        background-color: $color-secondary !important;
+    }
+}
+
+mat-form-field {
+    @extend .opensans-bold__14;
+    padding-bottom: 10px;
+    mat-placeholder {
+        letter-spacing: 0.4px;
+        width: 100%;
+    }
+    input {
+        height: 20px;
+    }
+}
+
+mat-form-field.ng-invalid {
+    mat-placeholder {
+        color: $color-error;
+    }
+}
+
+mat-form-field.mat-focused.ng-invalid {
+    mat-placeholder {
+        color: $color-error;
+    }
+}
+
+mat-form-field.mat-focused {
+    mat-placeholder {
+        color: $color-accent !important;
+    }
+}
+
+mat-form-field.ng-untouched.mat-focused {
+    mat-placeholder {
+        color: $color-accent;
+    }
+}
+
+mat-form-field.ng-untouched {
+    mat-placeholder {
+        color: $color-secondary;
+    }
+}
+
+mat-hint {
+    width: 100vw;
+    text-align: right;
+}
+
+div.mat-input-subscript-wrapper.mat-form-field-subscript-wrapper {
+    height:30px;
+}
+
+mat-form-field.ng-valid.cardInput__empty {
+    .mat-input-underline {
+        background-color: $color-lightGrey !important;
+    }
+}

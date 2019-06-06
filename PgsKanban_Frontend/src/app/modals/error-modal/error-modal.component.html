@@ -1,0 +1,15 @@
+<div class="error__placeholder">
+    <div>
+        <div (click)="closeDialog()" class="icon-close error__close"></div>
+    </div>
+    <div class="error__message--big">
+        Oh snap!
+    </div>
+    <div class="centered_row">
+        <div class="icon-rocket error500__rocket"></div>
+    </div>
+    <div class="modal__message--small">{{data.smallMessage}}</div>
+    <div class="centered_row modal__button--padding">
+        <button (click)="handleButton();" class="error__button--big to-uppercase">{{data.buttonName}}</button>
+    </div>
+</div>

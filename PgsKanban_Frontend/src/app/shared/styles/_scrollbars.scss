@@ -1,0 +1,42 @@
+.ps>.ps__rail-y {
+    width: 9px !important;
+    background: $color-mainBackground !important;
+    opacity: 1 !important;
+}
+
+.ps__rail-y>.ps__thumb-y {
+    width: 9px !important;
+    background: $color-secondary !important;
+    opacity: 1 !important;
+    margin-right: -2px;
+}
+
+.ps>.ps__rail-x {
+    height: 9px !important;
+    background: $color-grey !important;
+    opacity: 1 !important;
+}
+
+.ps__rail-x>.ps__thumb-x {
+    height: 9px !important;
+    background: $color-secondary !important;
+    opacity: 1 !important;
+    margin-bottom: -2px;
+}
+
+.list__scrollbar .ps>.ps__rail-y {
+    width: 9px !important;
+    background: $color-grey !important;
+    opacity: 1 !important;
+}
+
+.list__scrollbar .ps__rail-y>.ps__thumb-y {
+    width: 9px !important;
+    background: $color-secondary !important;
+    opacity: 1 !important;
+    margin-right: -2px;
+}
+
+.sidebar__container .ps__rail-x {
+    opacity: 0 !important;
+}

@@ -1,0 +1,34 @@
+<div class="member-miniature" fxLayout="row" (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()"
+     [ngClass]="{'hovering': hovering}">
+
+    <div fxLayout="row" fxLayoutAlign="end center" class="member-miniature__avatar-wrapper">
+        <div>
+            <img class="member-miniature__avatar-wrapper__avatar gravatar"
+            [src]="imageSrc"/>
+        </div>
+    </div>
+
+    <div class="member-miniature__text-data-wrapper" fxLayout="column" fxLayoutAlign="center start">
+        <div class="opensans-semibold__15 member-miniature__text-data-wrapper__name-surname">
+            <div class="text__overflow">
+                <span class="tooltip" matTooltipClass="tooltipStyle" matTooltip="{{member.firstName}} {{member.lastName}}"
+                matTooltipShowDelay="{{tooltipDelay}}" matTooltipPosition="right" matTooltipDisabled="{{showNameTooltip}}">
+                    {{member.firstName}} {{member.lastName}}
+                </span>
+            </div>
+        </div>
+        <div class="opensans-regular__10 member-miniature__text-data-wrapper__email">
+            <div class="text__overflow">
+                <span matTooltip="{{member.email}}" matTooltipPosition="right"
+                matTooltipShowDelay="{{tooltipDelay}}" matTooltipDisabled="{{showEmailTooltip}}">
+                    {{member.email}}
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <div class="member-miniature__icons-wrapper" fxLayout="column" fxLayoutAlign="space-around none">
+        <div class="icon icon-options member-miniature__icons-wrapper__options-icon notImplemented"></div>
+        <div (click)="deleteMemberRequest()" *ngIf="isAllowedToModify && hovering" class="icon icon-trash"></div>
+    </div>
+</div>

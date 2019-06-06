@@ -1,0 +1,15 @@
+@import "../_sidebars.scss";
+.sidebarBoards {
+    margin-bottom: 5px;
+}
+
+.sidebarBoards.lastBoard {
+    margin-bottom: 0 !important;
+}
+
+.import-button {
+    display: flex;
+    justify-content: center;
+    @include button($background: $color-grey, $width: 35px, $height: 30px);
+    font-size: 22px;
+}

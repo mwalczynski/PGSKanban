@@ -1,0 +1,62 @@
+@import "../../../shared/styles/colors";
+@import "../../../shared/styles/fonts";
+.member-miniature {
+    height: 80px;
+    width: 250px;
+    max-width: 250px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    background: $color-mainBackground;
+}
+
+.member-miniature.hovering {
+    background: white;
+}
+
+.member-miniature__avatar-wrapper {
+    width: 25%;
+    height: 100%;
+}
+
+.member-miniature__avatar-wrapper__avatar {
+    border-radius: 100%;
+    margin-right: 5px;
+}
+
+.member-miniature__text-data-wrapper {
+    width: 60%;
+    max-width: 60%;
+    height: 100%;
+    padding-left: 5px;
+}
+
+.member-miniature__text-data-wrapper__name-surname{
+    float: left;
+    max-width: 100%;
+    &:hover {
+        cursor: default;
+    }
+}
+
+.member-miniature__text-data-wrapper__email {
+    max-width: 100%;
+    &:hover {
+        cursor: default;
+    }
+}
+
+.member-miniature__icons-wrapper {
+    width: 15%;
+    height: 100%;
+}
+
+.member-miniature__icons-wrapper__options-icon {
+    font-size: 18px;
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.lastMember .member-miniature {
+    margin-bottom: 0px !important;
+}

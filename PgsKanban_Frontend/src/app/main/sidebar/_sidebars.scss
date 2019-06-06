@@ -1,0 +1,54 @@
+@import "../../shared/styles/_colors.scss";
+@import "../../shared/styles/_mixins.scss";
+.sidebar__extended {
+    position: static;
+    background: $color-grey;
+    height: 100vh;
+    width: 300px;
+}
+
+.sidebar-element {
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sidebar-button {
+    @include button($background: $color-grey, $width: 170px);
+}
+
+.sidebar__button-active {
+    color: $color-accent !important;
+}
+
+.userBoards__header,
+.favouritesBoards__header,
+.participantBoards__header {
+    margin-top: 11px;
+    margin-bottom: 3px;
+}
+
+.first__header {
+    margin-top: 0 !important;
+}
+
+.header__text {
+    font-size: 24px;
+    font-weight: lighter;
+}
+
+.sidebar-extended__header {
+    height: 70px;
+    margin-left: 14px;
+    margin-right: 15px;
+}
+
+.sidebar__container {
+    position: relative;
+    overflow: auto;
+    width: 271px;
+    height: calc(100vh - 123px);
+    margin-bottom: 53px;
+    margin-left: 14px;
+}

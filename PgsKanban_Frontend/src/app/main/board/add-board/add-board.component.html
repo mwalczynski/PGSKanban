@@ -1,0 +1,21 @@
+<div class="board__name-panel">
+    <div class="row board__header">
+        <div class="col-xs-11 col-md-11 col-lg-11">
+            <form autocomplete="off" novalidate (submit)="form.valid && addBoard()" #form = "ngForm">
+                <input (escKeyPressed)="redirectToHomePage()"
+                       #name = "ngModel"
+                       [ngClass]="{addBoard__changeColor: name.valid}"
+                       placeholder="Name your board here"
+                       maxlength="100" autofocus name="name"
+                       required [(ngModel)]="board.name"
+                       class="add__board-input opensans-bold__30 opensans-inputs"
+                       type="text">
+                <div class="addBoard__error"
+                     [hidden]="!((name.invalid && name.dirty) || (form.submitted && !name.value))"
+                     role="alert">
+                    <div>Board name is required</div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

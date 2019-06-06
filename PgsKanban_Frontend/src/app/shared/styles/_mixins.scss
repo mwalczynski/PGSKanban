@@ -1,0 +1,44 @@
+@import "colors";
+@mixin button($background: white, $color: $color-secondary, $width: auto, $height: 30px, $margin-right: 0px, $float: right) {
+    text-transform: uppercase;
+    border: 2px solid $color;
+    border-radius: 4px;
+    padding: 6px;
+    background: $background;
+    color: $color;
+    text-align: center;
+    font-weight: 700;
+    font-size: 12px;
+    float: $float;
+    margin-right: $margin-right;
+    width: $width;
+    height: $height;
+    line-height: 0;
+    &:enabled {
+        cursor: pointer;
+    }
+    &:hover {
+        color: $color-accent !important;
+        border-color: $color-accent !important;
+    }
+}
+
+@mixin buttonCustomHover($background: white, $color: $color-secondary, $width: auto, $height: 30px, $margin-right: 0px, $float: right) {
+    text-transform: uppercase;
+    border: 2px solid $color;
+    border-radius: 4px;
+    padding: 6px;
+    background: $background;
+    color: $color;
+    text-align: center;
+    font-weight: 700;
+    font-size: 12px;
+    float: $float;
+    margin-right: $margin-right;
+    width: $width;
+    height: $height;
+    line-height: 0;
+    &:enabled {
+        cursor: pointer;
+    }
+}

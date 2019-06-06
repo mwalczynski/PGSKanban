@@ -1,0 +1,90 @@
+@import "../../shared/styles/fonts";
+@import "../../shared/styles/_colors.scss";
+@import "../../shared/styles/mixins";
+@import "../../shared/styles/_material-input";
+.register__button {
+    @include button();
+}
+
+.register__header {
+    margin-top: 10px;
+    margin-left: 25px;
+    color: $color-secondaryBackground;
+    font-weight: 700;
+    font-size: 30px;
+    align-self: flex-start;
+}
+
+.register__content {
+    width: 570px;
+    height: 660px;
+    background: $color-secondaryBackground url("../../shared/img/img-register.png") no-repeat;
+    background-size: 170px 100%;
+    position: relative;
+    left: 16.4%;
+    top: 15.5%;
+    border-radius: 5px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.register__inputs {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.register__input {
+    min-width: 270px;
+    margin-bottom: -8px;
+}
+
+.register__form {
+    width: 270px;
+    margin-left: 200px;
+    margin-top: -25px;
+}
+
+.register__link {
+    align-self: flex-end;
+    margin-right: 25px;
+    font-size: 14px;
+    margin-top: 20px;
+}
+
+.register__terms {
+    padding-bottom: 20px;
+}
+
+.register__terms-error {
+    margin-top: -10px;
+}
+
+.register__download {
+    color: $color-accent;
+}
+
+.register__checkbox {
+    font-size: 12px;
+    font-weight: 300;
+}
+
+.register__captcha {
+    margin-top: 6px;
+    margin-bottom: 14px;
+}
+
+.register__other-errors {
+    margin-top: -20px;
+}
+
+.captcha__alert {
+    margin-bottom: 15px;
+    margin-right: 40px;
+    color: $color-error !important;
+}
+
+.register__password-error {
+    margin-top: -16px;
+}

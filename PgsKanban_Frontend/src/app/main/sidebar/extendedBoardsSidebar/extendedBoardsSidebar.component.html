@@ -1,0 +1,35 @@
+<div class="sidebar__extended" [@slideInOutAnimation] *ngIf="isBoardsSidebarShown" fxLayout="column" fxLayoutAlign="start stretch">
+    <div fxLayout="column">
+        <div class="sidebar-extended__header" fxLayout="row" fxLayoutAlign="space-between center">
+            <button class="sidebar-button opensans-bold__12" routerLink='/board'> Add new board </button>
+            <button (click)="showBoardImport()" matTooltipDisabled="{{disableImportTooltip}}" matTooltip="Import board from Trello" class="import-button icon-cloud-upload"></button>
+            <div class="icon icon-close" (click)="foldBoardsSidebar()"></div>
+        </div>
+        <div #sidebarContainer class="sidebar__container">
+            <div *ngIf="isAnyFavouritesBoards()">
+                <p class="header__text favouritesBoards__header first__header">
+                    Favourites
+                </p>
+                <div *ngFor="let board of (userBoardList | async).userBoards | favorite; let last = last" [ngClass]="{'lastBoard':last}" class="sidebarBoards">
+                    <board-miniature (boardHearted)="scrollTop()" [userBoard]="board"></board-miniature>
+                </div>
+            </div>
+            <div *ngIf="isAnyOwnedBoards()">
+                <p class="header__text userBoards__header" [ngClass]="{'first__header': !isAnyFavouritesBoards()}">
+                    My boards
+                </p>
+                <div *ngFor="let board of (userBoardList | async).userBoards | owner; let last = last" [ngClass]="{'lastBoard':last}" class="sidebarBoards">
+                    <board-miniature (boardHearted)="scrollTop()" [userBoard]="board"></board-miniature>
+                </div>
+            </div>
+            <div *ngIf="isAnyParticipantBoards()">
+                <p class="header__text participantBoards__header" [ngClass]="{'first__header': !isAnyFavouritesBoards() && !isAnyOwnedBoards()}">
+                    Participant boards
+                </p>
+                <div *ngFor="let board of (userBoardList | async).userBoards | participant; let last = last" [ngClass]="{'lastBoard':last}" class="sidebarBoards">
+                    <board-miniature (boardHearted)="scrollTop()" [userBoard]="board"></board-miniature>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

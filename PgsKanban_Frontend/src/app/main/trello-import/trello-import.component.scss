@@ -1,0 +1,102 @@
+@import "../../shared/styles/colors";
+@import "../../shared/styles/mixins";
+
+.import__dialog {
+    width: 536px;
+    height: 400px;
+    margin: 24px;
+}
+
+.my-drop-zone {
+    border: dotted 3px $color-secondary;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &:hover {
+        border: dotted 3px $color-accent;
+    }
+}
+
+.nv-file-over {
+    border: dotted 3px $color-accent;
+}
+
+.col-xs-1 {
+    padding-left: 15px;
+    padding-right: 0;
+}
+
+.step-button {
+    margin-top: 5%;
+    @include button($width: 70px);
+    &:disabled {
+        background-color: $color-grey;
+    }
+}
+
+.import__inputs {
+    padding-top: 80px;
+    height: 100px;
+}
+
+.import__input {
+    border: none;
+    width: 520px;
+    padding: 0;
+    font-family: inherit;
+    color: $color-secondary;
+}
+
+.import__error {
+    width: 100%;
+    color: $color-error;
+    font-size: 14px;
+    font-style: italic;
+}
+
+.import__form {
+    height: 220px;
+}
+
+.import__statistics {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 220px;
+}
+
+.accept__buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.import_hidden {
+    display: none;
+}
+
+.import__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include button($width: 350px, $height: 40px);
+    cursor: pointer;
+}
+
+.import__placeholder--link {
+    display: flex;
+    justify-content: center;
+}
+
+.import__statisticNumber {
+    color: $color-accent;
+}
+
+.import__stepper {
+    padding-right: 5px;
+}
+
+.col-xs-1 {
+    padding-left: 8px;
+}

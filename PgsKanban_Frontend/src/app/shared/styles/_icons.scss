@@ -1,0 +1,93 @@
+@import "colors";
+@import '~simple-line-icons/css/simple-line-icons.css';
+.icon-layers {
+    font-size: 36px;
+    color: $color-secondary;
+    cursor: pointer;
+}
+
+.icon-user-follow {
+    font-size: 36px;
+    color: $color-secondary;
+}
+
+.icon-power {
+    font-size: 34px;
+    color: $color-secondary;
+    cursor: pointer;
+}
+
+.icon-magnifier {
+    font-size: 32px;
+    color: $color-secondary;
+}
+
+.icon-user {
+    font-size: 32px;
+    color: black;
+}
+
+.icon-arrow-down {
+    margin-left: 30px;
+    font-size: 16px;
+    color: black;
+}
+
+.icon-people {
+    color: $color-secondary;
+    font-size: 18px;
+    margin-right: 5px;
+}
+
+.icon-trash {
+    color: $color-secondary;
+    font-size: 20px;
+    cursor: pointer;
+    &:hover {
+        color: $color-accent;
+    }
+}
+
+.icon-heart {
+    color: $color-secondary;
+    font-size: 20;
+    margin-left: 5px;
+    cursor: pointer;
+    &:hover {
+        color: $color-accent;
+    }
+}
+
+.icon-close {
+    font-size: 30px;
+    color: $color-secondary;
+    cursor: pointer;
+}
+
+.icon-bubbles {
+    font-size: 18px;
+    color: $color-secondary;
+}
+
+.icon-custom-minus {
+    padding-bottom: 5px;
+}
+
+.icons__icon {
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 17px;
+    color: $color-secondary;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid 2px $color-secondary;
+    height: 15px;
+    width: 15px;
+    border-radius: 5px;
+    &:hover {
+        color: $color-accent;
+        border-color: $color-accent;
+    }
+}

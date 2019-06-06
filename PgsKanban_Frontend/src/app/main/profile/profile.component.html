@@ -1,0 +1,11 @@
+<div class="profile-page" fxLayout fxLayout.lt-md="column" fxLayoutGap="20px" fxLayoutGap.xs="40px" (click)="onClickOutsideSidebar()">
+    <app-profile-edit class="profile-edit" [profile]="profile"></app-profile-edit>
+    <app-password-change *ngIf="shouldBeChangePasswordFormVisible()" class="password-change"></app-password-change>
+    <app-password-add (addedPassword)="userAddedPassword()"
+                      *ngIf="shouldBeAddPasswordFormVisible()"></app-password-add>
+    <app-anonymity-change class="anonymity-change"
+                          [isProfileAnonymous]="profile.isProfileAnonymous"></app-anonymity-change>
+</div>
+<div class="profile__app-footer">
+    <app-footer></app-footer>
+</div>

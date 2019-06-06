@@ -1,0 +1,130 @@
+@import "../../shared/styles/fonts";
+@import "../../shared/styles/_colors.scss";
+@import "../../shared/styles/mixins";
+@import "../../shared/styles/_material-input";
+
+.login__button {
+    @include button($width: 70px, $float: right);
+    align-self: flex-end;
+}
+
+.login__header {
+    margin-top: 10px;
+    margin-left: 25px;
+    color: $color-secondaryBackground;
+    font-weight: 700;
+    font-size: 30px;
+    align-self: flex-start;
+}
+
+.login__content {
+    width: 570px;
+    min-height: 380px;
+    background: $color-secondaryBackground url("../../shared/img/img-login.png") no-repeat;
+    background-size: 170px 100%;
+    position: relative;
+    left: 16.4%;
+    top: 31.5%;
+    border-radius: 5px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.login__inputs {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.login__input {
+    min-width: 270px;
+    margin-bottom: -8px;
+}
+
+.login__form {
+    width: 270px;
+    margin-left: 200px;
+    margin-top: -25px;
+}
+
+.external_section--underlined {
+    margin-bottom: 40px;
+    width: 80px;
+    margin-top: 26px;
+    border-bottom: 0.5px solid $color-lightGrey;
+}
+
+.login__externals {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 270px;
+    margin-bottom: 15px;
+    margin-left: 200px;
+}
+
+.login__link {
+    align-self: flex-end;
+    margin-right: 25px;
+    font-size: 14px;
+    margin-top: 20px;
+}
+
+.login__forgot {
+    font-size: 12px;
+    font-weight: 600;
+    color: $color-secondary;
+}
+
+.login__row {
+    margin-top: 28px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.login__error {
+    min-width: 300px;
+    display: flex;
+    margin-top: 5px;
+    flex-direction: column;
+}
+
+.login__message {
+    align-self: flex-end;
+}
+
+.centered_column {
+    display: flex;
+    flex-direction: column;
+}
+
+.login__external {
+    border-radius: 4px;
+    padding: 6px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 12px;
+    width: 170px;
+    height: 30px;
+    border: none;
+    margin-bottom: 15px;
+    &:enabled {
+        cursor: pointer;
+    }
+}
+
+.login__external--google {
+    background: $color-googleLogIn;
+    color: $color-secondaryBackground;
+}
+
+.login__external--openId {
+    background: $color-accent,;
+    color: $color-secondaryBackground;
+}
+
+.login__external--facebook{
+    background: $color-facebook,;
+    color: $color-secondaryBackground;
+}

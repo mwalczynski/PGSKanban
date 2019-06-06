@@ -1,0 +1,115 @@
+@import "../../../styles";
+@import "../../shared/styles/_fonts";
+@import "../../shared/styles/_mixins";
+@import "../../shared/styles/_material-input";
+
+$bar-height: 70px;
+
+.user-info__bar {
+    height: $bar-height;
+    max-width: 100%;
+    border-bottom: 1px solid white;
+}
+
+.bar__profile {
+    height: 100%;
+    max-width: 100%;
+}
+
+.icon-arrow-down, .icon-arrow-up {
+    transition: all .3s ease-in-out;
+}
+
+.profile__user-info-widget {
+    height: 100%;
+    padding-right: 20px;
+}
+
+.profileOnActiveDropdown {
+    background-color: $color-secondaryBackground;
+    transition: background-color 0.3s;
+}
+
+.profileOnInactiveDropdown {
+    background-color: $color-mainBackground;
+    transition: background-color 0.3s;
+}
+
+.profile__user-info-widget:hover .icon-arrow-down {
+    transition: all .3s ease-in-out;
+    transform: scale(1.4);
+    color: $color-accent;
+}
+
+.user-info-widget__gravatar {
+    margin-left: 10px;
+}
+
+.user-info-widget__gravatar>img {
+    border-radius: 50%;
+}
+
+.profile__user-info-widget {
+    transition: all .4s;
+    user-select: none;
+    max-width: 100%;
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.profile__dropdown-content {
+    position: relative;
+    height: auto;
+    padding: 12px 10px;
+    border-top: 1px solid $color-mainBackground;
+    text-align: right;
+    color: $color-secondary !important;
+    transition: all .4s;
+    background-color: $color-secondaryBackground;
+    opacity: 0 !important;
+    visibility: hidden;
+    z-index: 10;
+}
+
+.showDropdownContent {
+    background-color: $color-secondaryBackground;
+    height: auto;
+    visibility: visible;
+    opacity: 1 !important;
+}
+
+
+.icon-user {
+    color: $color-secondary !important;
+    font-size: 18px !important;
+    padding: 10px;
+}
+
+.element__text {
+    padding: 10px 10px 10px 20px;
+}
+
+.user-info-widget__dropdown-icon {
+    margin-right: 15px;
+}
+
+.dropdown-content__element {
+    display: flex;
+    transition: all .3s;
+    &:hover {
+        transition: all .3s;
+        transform: scaleY(1.1);
+        padding-left: 20px;
+        color: $color-accent !important;
+        cursor: pointer;
+    }
+}
+
+.dropdown-content__element:hover .element__icon {
+    color: $color-accent !important;
+}
+
+.user-info-widget__name {
+    max-width: 100%;
+}

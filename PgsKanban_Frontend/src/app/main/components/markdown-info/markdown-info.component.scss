@@ -1,0 +1,67 @@
+@import "../../../shared/styles/colors";
+
+.paragraph {
+    margin: 0;
+    padding-left: 15px;
+}
+
+.markdown-info {
+    position: absolute;
+    padding: 15px 15px 5px;
+    box-shadow: 2px 5px $color-lightGrey;
+    background: $color-secondaryBackground;
+    border: solid 1px $color-secondary;
+    border-radius: 5px;
+    width: 220px;
+}
+
+.lists-info {
+    justify-content: flex-start;
+}
+
+.list__row {
+    justify-content: space-around;
+}
+
+.list-style {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.info-link {
+    display: flex;
+    padding-top: 5px;
+    justify-content: center;
+}
+
+.info-header {
+    margin-bottom: 0;
+}
+
+.markdown__header1 {
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.markdown__header2 {
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.markdown__header3 {
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.markdown__bold {
+    font-weight: bold;
+}
+
+.markdown__italic {
+    font-style: italic;
+}
+
+.markdown__strikethrough {
+    text-decoration: line-through;
+}
+

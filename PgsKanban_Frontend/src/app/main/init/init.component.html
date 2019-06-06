@@ -1,0 +1,5 @@
+<div (click)="onClickOutsideSidebar()">
+    <app-first-board-creation *ngIf="!hasBoards"></app-first-board-creation>
+    <app-welcome *ngIf="hasBoards" (lastBoardDeleted)="onLastBoardDelete()"></app-welcome>
+    <!-- couldn't think of a better solution for making the url "/" for both the first board creation (or start) page and welcome page -->
+</div>

@@ -1,0 +1,145 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "~flexboxgrid";
+@import "app/shared/styles/material-input";
+@import "app/shared/styles/icons";
+@import "app/shared/styles/_colors";
+@import "app/shared/styles/_fonts.scss";
+@import "app/shared/styles/_scrollbars.scss";
+@import "app/shared/styles/_icons";
+@import "~dragula/dist/dragula.css";
+@import "app/shared/styles/overrided-angular-material-styles";
+@import "~prismjs/themes/prism-okaidia.css";
+body {
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
+    font-family: "Open Sans";
+}
+
+mat-dialog-container.mat-dialog-container {
+    padding: 0;
+    border-radius: 8px;
+}
+
+* {
+    font-family: "Open Sans";
+}
+
+*:focus {
+    outline: none;
+}
+
+.k-page {
+    background: $color-mainBackground url("~app/shared/img/K-big.png") no-repeat;
+    background-size: auto 100%;
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+.full-page {
+    background: $color-mainBackground;
+    background-size: auto 100%;
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+.text__overflow {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.notImplemented {
+    visibility: hidden;
+}
+
+.anchor--orange {
+    font-size: 14px;
+    color: $color-accent;
+    font-weight: 600;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.recaptcha--smaller {
+    transform: scale(0.9);
+    transform-origin: 0 0 0;
+}
+
+.to-uppercase {
+    text-transform: uppercase;
+}
+
+.centered_row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.error-message {
+    font-size: 12px;
+    font-style: italic !important;
+    font-weight: normal;
+    float: right;
+    color: $color-error;
+}
+
+button.button_disabled--color:disabled {
+    background-color: $color-grey !important;
+}
+
+.text__button {
+    color: $color-secondary;
+    text-decoration: underline;
+    text-decoration-color: $color-lightGrey;
+    cursor: pointer;
+    &:hover {
+        color: $color-accent;
+        text-decoration-color: $color-accent;
+    }
+}
+
+.icon:hover {
+    color: $color-accent !important;
+}
+
+.icon:hover~div {
+    color: $color-accent !important;
+}
+
+.notImplemented {
+    visibility: hidden !important;
+}
+
+.tooltipStyle {
+    font-size: 12px;
+    word-wrap: break-word;
+}
+
+.button__hover-disabled:hover * {
+    color: $color-secondary !important;
+    border-color: $color-secondary !important;
+}
+
+.button__hover {
+    color: $color-accent !important;
+    border-color: $color-accent !important;
+}
+
+.gravatar {
+    width: 40px;
+    height: 40px;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+    background: $color-underlineBoardMiniature;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: $color-secondary;
+}

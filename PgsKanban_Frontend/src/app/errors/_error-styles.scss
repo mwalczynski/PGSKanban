@@ -1,0 +1,36 @@
+@import "../shared/styles/fonts";
+
+@mixin error__container($bottom, $width){
+    width: $width;
+    height: 270px;
+    position: absolute;
+    right: 53.8%;
+    bottom: $bottom;
+}
+
+.errorPage__error--small {
+    text-align: right;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.errorPage__error--big {
+    text-align: left;
+    height: 70%;
+    padding-top: 2%;
+    font-size: 150px;
+    font-weight: 700;
+    color: $color-black;
+}
+
+.errorPage__message {
+    text-align: right;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.error__back-link {
+    cursor: pointer;
+    color: $color-accent;
+    text-decoration: underline;
+}

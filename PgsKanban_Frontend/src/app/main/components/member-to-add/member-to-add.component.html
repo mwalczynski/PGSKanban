@@ -1,0 +1,17 @@
+<div class="memberToAdd" fxLayout="row">
+    <div class="memberToAdd__avatar-wrapper" fxLayout="row" fxLayoutAlign="end center">
+        <img [src]="this.imageSrc" class="memberToAdd__avatar gravatar">
+    </div>
+    <div class="memberToAdd__userInfo" fxLayout="column">
+        <div class="opensans-semibold__15 useInfo__nameSurname text__overflow" layout="row" layout-align="start end">
+            {{member.firstName}} {{member.lastName}}
+        </div>
+        <div class="opensans-regular__10 userInfo__email">
+            {{member.email}}
+        </div>
+    </div>
+    <div class="userInfo__icons">
+        <app-plus (click)="handleMember()" [hidden]="member.added"></app-plus>
+        <app-minus (click)="handleMember()" [hidden]="!member.added"></app-minus>
+    </div>
+</div>

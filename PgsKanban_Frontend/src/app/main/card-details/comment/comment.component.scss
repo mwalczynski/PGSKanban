@@ -1,0 +1,46 @@
+@import '../../../shared/styles/_colors.scss';
+@import '../../../../styles.scss';
+
+.comment {
+    width: calc(100% - 29px);
+    margin-bottom: 20px;
+}
+
+.comment-last .comment {
+    margin-bottom: 0px;
+}
+
+.comment__gravatar {
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.comment__userData {
+    @extend .opensans-bold__14;
+    margin-top: -3px;
+    margin-bottom: 6px;
+}
+
+.comment__content {
+    border-radius: 5px;
+    padding: 5px 11px;
+    box-sizing: border-box;
+    max-width: 600px;
+    word-wrap: break-word;
+    word-break: normal;
+}
+
+.comment__content-owner {
+    @extend .comment__content;
+    @extend .opensans-light__12;
+    background: $color-accent;
+    color: white;
+}
+
+.comment__content-otherUser {
+    @extend .comment__content;
+    @extend .opensans-light__12;
+    color: $color-black;
+    background: $color-mainBackground;
+    font-style: italic;
+}

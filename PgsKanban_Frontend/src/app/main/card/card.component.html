@@ -1,0 +1,11 @@
+<div (mouseenter)="showTrash()" (mouseleave)="hideTrash()" (click)="handleSingleClick()" class="card__element">
+    <div class="card__content opensans-regular__12 cardDraggable">
+        <p *ngIf="isCardTextDisplayed()" class="card__label cardDraggable" >{{card.name}}</p>
+        <div class="icon-trash card__trash" (mousedown)="handleDeletingCard()" *ngIf="shouldDisplayTrash()"></div>
+        <form autocomplete="off" #form="ngForm" class="card__form" *ngIf="isFormDisplayed()" (submit)="saveCard(form)">
+            <textarea fz-elastic [autofocus] class="card__textarea opensans-regular__12" spellcheck="false" required maxlength="500"
+            (escKeyPressed)="abortChanges(true)" (keydown.enter)="saveCard(form);false" (blur)="abortChanges(false)" rows='1'
+            [(ngModel)]="card.name" name="cardName" (ngModelChange)="updateCardName()"></textarea>
+        </form>
+    </div>
+</div>

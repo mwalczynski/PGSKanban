@@ -1,0 +1,45 @@
+<div class="list-size">
+    <span class="tooltip" matTooltip="{{list.name}}"
+        matTooltipClass="tooltipStyle" matTooltipPosition="above"
+        matTooltipShowDelay="{{tooltipDelay}}" matTooltipDisabled="{{showTooltip}}">
+        <div class="list__header" [ngClass]="checkHoveringHeader()" (mouseover)="mouseOverHeader()"
+            (mouseleave)="mouseLeaveHeader()">
+            <div class="list__name listDraggable">
+                <p (click)="startEditing()"
+                    class="text__overflow opensans-bold__14 listName--color listName__label listDraggable"
+                    *ngIf="isTextDisplayed()">{{list.name}}</p>
+                <form autocomplete="off" #form="ngForm" *ngIf="isFormDisplayed()" novalidate (submit)="saveList(form)">
+                    <input [autofocus] #name="ngModel" spellcheck="false"
+                        class="list__input opensans-bold__14 opensans-inputs" name="listName"
+                        required maxlength="100" (keyup)="updateListName()" (escKeyPressed)="abortChanges(true)"
+                        (blur)="abortChanges(false)"
+                        [(ngModel)]="list.name" />
+                    <div class="opensans-itallic__14 list__error" role="alert">
+                        <div *ngIf="isErrorDisplayed(form)">List name is required</div>
+                    </div>
+                </form>
+            </div>
+            <div *ngIf="isOwner && !isFormDisplayed()" class="list__dots">
+                <span (click)="deleteListRequest()" class="icon-trash"></span>
+            </div>
+        </div>
+    </span>
+    <div class="list__container">
+        <div class="card__container" [id]="list.id" [dragula]='"cards-bag"'
+             [dragulaModel]="cards"
+        >
+            <div class="card" *ngFor="let item of cards; let last = last" [ngClass]="{'lastCard':last}">
+                <app-card [card]="item" [isOwner]="isOwner" [id]="item.id"
+                          (abortAddingCard)="deleteLastCard()"
+                          (addNewCard)="addCard()" (deleteChosenCard)="deleteCard($event)"></app-card>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="isOwner">
+        <button enter-key class="list__add-card opensans-bold__14"
+                (mousedown)="saveCard(); $event.preventDefault(); $event.stopPropagation();"
+                [ngClass]="{'button__hover-disabled': isDragging(), 'button__hover': !isDragging()}"
+                (mouseenter)="mouseOverButton()" (mouseleave)="mouseOutOfButton()">Add card
+        </button>
+    </div>
+</div>

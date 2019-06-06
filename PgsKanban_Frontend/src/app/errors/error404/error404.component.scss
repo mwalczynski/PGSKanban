@@ -1,0 +1,5 @@
+@import "../error-styles";
+
+.error404__main {
+    @include error__container(40.8%, 255px);
+}

@@ -1,0 +1,38 @@
+@import "../../../shared/styles/_fonts";
+@import "../../../shared/styles/_mixins";
+@import "../../../shared/styles/_material-input";
+
+.userProfile__Panel {
+    min-width:300px;
+}
+
+.userProfile__changeName {
+    padding-right: 100px;
+}
+
+.changeName__form {
+    margin-top: 41px;
+    min-width: 270px;
+}
+
+.changeName__form .userProfile__button {
+    @include buttonCustomHover($background: $color-accent, $color: $color-secondaryBackground, $float: left, $width: 170px, $height:32px);
+    border-radius: 7px;
+    margin-top:20px;
+    border-color: $color-mainBackground !important;
+    &:enabled {
+        &:hover {
+            color: $color-secondaryBackground !important;
+            border-color: $color-mainBackground !important;
+            cursor: pointer;
+        }
+    }
+}
+
+.userProfileInput {
+    height: 75px;
+}
+
+.input-placeholder {
+    color: $color-secondary;
+}

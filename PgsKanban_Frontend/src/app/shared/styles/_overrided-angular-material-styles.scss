@@ -1,0 +1,22 @@
+@import "colors";
+
+.mat-slide-toggle.mat-warn.mat-checked:not(.mat-disabled) .mat-slide-toggle-thumb {
+    background-color: $color-accent;
+}
+
+mat-checkbox.mat-checkbox-checked.mat-accent .mat-checkbox-background, .mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
+    background-color: $color-black !important;
+}
+
+.mat-ripple-element {
+    background: $color-black !important;
+    opacity: 0.1;
+}
+
+.mat-step-header .mat-step-icon {
+    background-color: $color-accent;
+}
+
+mat-horizontal-stepper > div.mat-horizontal-content-container {
+    padding-bottom: 0;
+}

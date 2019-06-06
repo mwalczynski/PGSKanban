@@ -1,0 +1,26 @@
+@import "../../shared/styles/colors";
+@import "../modals";
+
+.error__placeholder {
+    @include modal__placeholder($color: $color-error);
+    display: flex;
+    flex-direction: column;
+}
+
+.error__close {
+    @include modal__close($color: $color-error);
+}
+
+.error__message--big {
+    @include modal__message--big($color: $color-error)
+}
+
+.icon-rocket.error500__rocket {
+    font-size: 160px;
+    color: $color-error;
+    transform: rotate(180deg);
+}
+
+.error__button--big {
+    @include modal__button--big($color: $color-error);
+}

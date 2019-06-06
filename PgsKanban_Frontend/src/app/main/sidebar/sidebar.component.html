@@ -1,0 +1,33 @@
+<div fxLayout>
+    <div class="sidebar" fxLayout="column" fxLayoutAlign="space-between" (mouseenter)="mouseOverSidebar()" (mouseleave)="mouseOutOfSidebar()">
+        <div>
+            <div class="sidebar-element">
+                <div class="image" (click)="redirectToInitPage()"></div>
+            </div>
+            <div class="sidebar-underlined"></div>
+            <div class="sidebar-element" fxLayout="column" [ngClass]="{'button__hover-disabled': sidebarHovering()}">
+                <div class="icon sidebar__icon icon-layers" (click)="toggleBoardsSidebar()"
+                    [ngClass]="{'sidebar__button-active': isBoardsSidebarActive}"></div>
+                <div class="opensans-bold__12 to-uppercase" [ngClass]="{'sidebar__button-active':isBoardsSidebarActive}">
+                    <span>boards</span>
+                </div>
+            </div>
+            <div class="sidebar-element" fxLayout="column" [ngClass]="{'button__hover-disabled': sidebarHovering()}">
+                <div class="icon sidebar__icon icon-user-follow" (click)="toggleMembersSidebar()"
+                    [ngClass]="{'disabled': !isInBoardView(), 'sidebar__button-active': isMembersSidebarActive}"></div>
+                <div class="opensans-bold__12 to-uppercase" [ngClass]="{'disabled': !isInBoardView(), 'sidebar__button-active': isMembersSidebarActive}">
+                    <span>member</span>
+                </div>
+            </div>
+        </div>
+        <div class="sidebar-element" fxLayout="column" [ngClass]="{'button__hover-disabled': sidebarHovering()}">
+            <div class="icon sidebar__icon icon-power" (click)="logout()"></div>
+            <div class="opensans-bold__12 to-uppercase">
+                <span>logout</span>
+            </div>
+        </div>
+    </div>
+    <app-extended-boards-sidebar (foldSidebar)="foldBoardsSidebar()" [isBoardsSidebarShown]="isBoardsSidebarActive"></app-extended-boards-sidebar>
+    <app-extended-members-sidebar (foldSidebar)="foldMembersSidebar()" [isAllowedToModify]="isAllowedToModify" [members]="members"
+         [isMembersSidebarShown]="isMembersSidebarActive"></app-extended-members-sidebar>
+</div>

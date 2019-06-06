@@ -1,0 +1,32 @@
+@import "../../../shared/styles/fonts.scss";
+@import "../init.component.scss";
+@import "../../../shared/styles/material-input.scss";
+
+.firstBoardCreation__inputContainer {
+    width: 270px !important;
+}
+
+.firstBoardCreation__form {
+    flex-direction: column;
+    display: flex;
+    padding-top: 30px;
+    width: 300px;
+}
+
+
+mat-form-field.ng-valid.cardInput__empty {
+    mat-placeholder {
+        color: $color-secondary;
+    }
+}
+
+
+
+mat-placeholder.placeholder_red {
+    color: $color-error !important;
+}
+
+.first__app-footer {
+    padding-top: 345px;
+    padding-right: 13px;
+}

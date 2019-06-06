@@ -1,0 +1,34 @@
+<div class="initialPages__container">
+    <p class="opensans-bold__30 initialPages__greetingText">Hello! <br>{{username}} {{lastname}}</p>
+    <div class="opensans-light__24 initPage__description">Let's start and setup your very first <span class="initialPages__kanban">Kanban</span> board.</div>
+    <div>
+        <form autocomplete="off" #form="ngForm" class="firstBoardCreation__form" (submit)="onCreatingFirstBoardSubmit(form)">
+            <mat-form-field class="firstBoardCreation__inputContainer">
+                <mat-placeholder [ngClass]="{'placeholder_red': form.submitted && boardName.invalid}" class="opensans-regular__14">Your first board</mat-placeholder>
+                <input matInput class="opensans-bold__14 inputPlaceholder" name="boardName" #boardName="ngModel" [(ngModel)]="initBoard.boardName"
+                    required maxlength="100">
+                <mat-error class="error-message">This field is required</mat-error>
+            </mat-form-field>
+            <mat-form-field class="firstBoardCreation__inputContainer" [ngClass]="{'cardInput__empty': isEmptyCardName() && !initBoard.listName}">
+                <mat-placeholder [ngClass]="{'placeholder_red': !isEmptyCardName() && form.submitted && !initBoard.listName}" class="opensans-regular__14">Your first list</mat-placeholder>
+                <input matInput class="opensans-bold__14 inputPlaceholder" name="listName" #listName="ngModel" [(ngModel)]="initBoard.listName"
+                    [required]="!isEmptyCardName()" maxlength="100">
+                <mat-error class="error-message" *ngIf="!isEmptyCardName()">This field is required</mat-error>
+            </mat-form-field>
+            <mat-form-field class="firstBoardCreation__inputContainer" [ngClass]="{'cardInput__empty': isEmptyCardName()}">
+                <mat-placeholder class="opensans-regular__14">Your first card</mat-placeholder>
+                <input matInput class="opensans-bold__14 inputPlaceholder" name="cardName" #cardName="ngModel" [(ngModel)]="initBoard.cardName"
+                    maxlength="100">
+            </mat-form-field>
+            <div>
+                <button [disabled]="isButtonDisabled" class="initialPages__button initialPages__textButton">Create my first board</button>
+            </div>
+        </form>
+    </div>
+    <button class="import__button button--floatLeft" (click)="showBoardImport()">
+        Import new board
+    </button>
+    <div class="first__app-footer">
+        <app-footer></app-footer>
+    </div>
+</div>
