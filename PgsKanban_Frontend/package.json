@@ -36,7 +36,7 @@
         "core-js": "2.4.1",
         "dom-autoscroller": "2.3.3",
         "flexboxgrid": "6.3.1",
-        "lodash": "4.17.4",
+        "lodash": "4.17.19",
         "ng-click-outside": "2.4.1",
         "ng-recaptcha": "3.0.2",
         "ng2-dragula": "1.5.0",
